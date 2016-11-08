@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            About
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    Testing for values in FIREBASE {{config.name}} v.{{config.version}}
+
+    <hr>
+    <ion-list *ngIf="logs">
+        <ion-item ng-repeat="item in logs">
+            {{item?.id}} <b>{{item?.accion}}</b> {{item?.descripcion}}
+        </ion-item>
+    </ion-list>
+
+
+</ion-content>

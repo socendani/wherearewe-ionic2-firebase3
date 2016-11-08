@@ -1,0 +1,14 @@
+{
+    "config": {
+        "version": 1,
+        "name": "Where Are We",
+        "descripcion": "WhereAreWe-ionic2-firebase"
+    },
+    "logs": {
+        "id": 1,
+        "fecha": "2016-11-04",
+        "accion": "SERVER",
+        "descripcion": "Log generado desde dani.md"
+    }
+
+}
