@@ -15,21 +15,27 @@ import { LoginModalPage } from '../pages/login-modal/login-modal';
 // import  ColorPickerModule  from 'ColorPickerModule';
 // import ColorPickerModule  from 'angular2-color-picker';
 // import {ColorPickerModule}  from 'angular2-color-picker';
+// import {ColorPickerModule} from 'angular2-color-picker/index';
 import { FormsModule  } from "@angular/forms";
 
 //Common services
 import { Storage } from '@ionic/storage';
 import { LoggerService } from '../services/logger.service';
 
+//Components
+import { RoomsListComponent }  from '../components/rooms-list/rooms-list';
+import { ChangeMapComponent }  from '../components/change-map/change-map';
+
+
 
 @NgModule({
   declarations: [
-    MyApp,
+    MyApp, RoomsListComponent,ChangeMapComponent,
     AboutPage, MapPage, ChatPage, TabsPage, LoginModalPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    // ColorPickerModule
+    // ColorPickerModule,
     FormsModule
   ],
   bootstrap: [IonicApp],

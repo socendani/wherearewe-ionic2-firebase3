@@ -1,35 +1,46 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>Identificación</ion-title>
-        <ion-buttons start>
-
-            <button (click)="dismiss()">
-              <span color="secondary" showWhen="ios">Cancel</span>
-            	<ion-icon color="secondary" name="md-close" showWhen="android,windows"></ion-icon>
-            </button>
-
-        </ion-buttons>
+        <ion-title>Identificación (modal)</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <p>Hola,</p>
-    <p>Debes elegir un <b>nickname</b> (apodo) y un <b>color</b>
-
-        <form class="container" (ngSubmit)="submit()">
-            <ion-item>
-                <ion-input placeholder="Nickname (apodo)" clearInput [(ngModel)]="user.nickname" name="nickname" #nicknameState="ngModel" required>
-                </ion-input>
-            </ion-item>
-            <ion-item danger [hidden]="nicknameState.valid || nicknameState.untouched">
-                La descripción es obligatoria
-            </ion-item>
-            <!--<ion-item>
+    <form class="container" (ngSubmit)="submit()">
+        <br><br>
+        
+        <ion-item>
+            <ion-input placeholder="Tu nickname (apodo)" clearInput [(ngModel)]="username" name="username" #usernameState="ngModel" required>
+            </ion-input>
+        </ion-item>
+        <!--<ion-item danger [hidden]="usernameState.valid || usernameState.untouched">
+                El nickname es obligatorio
+            </ion-item>-->
+        <!--<ion-item>
                 <input [(colorPicker)]="color" [style.background]="color" [value]="color"/>
             </ion-item>-->
-        </form>
+
+
+        <ion-item>
+            <ion-input placeholder="Nuevo mapa / unirse a un mapa" clearInput [(ngModel)]="roomname" name="roomname" #roomnameState="ngModel" required>
+            </ion-input>
+        </ion-item>
+
+        <div>
+            <br><span>Histórico de mapas</span>
+            <rooms-list (roomnameSelected)="roomSelectedHistoric($event)"></rooms-list>
+        </div>
+
+
+        <div class="submit-button">
+            <button ion-button block type="submit" [disabled]="!usernameState.valid && !roomnameState.valid">{{buttonText}}</button>
+        </div>
+
+
+    </form>
+
+
 
 </ion-content>

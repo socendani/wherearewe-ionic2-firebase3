@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 import 'rxjs/Rx';
 import * as firebase from "firebase";
 
+import { UserModel } from '../models/user.model';
+
 
 // declare var firebase: any;
 
@@ -17,13 +19,42 @@ export class FirebaseService {
   public db: any;
   public logNode: any;
   public configNode: any;
+  public usersNode: any;
+  public mapsNode: any;
 
   constructor() {
     this.db = firebase.database().ref('/');
     this.logNode = firebase.database().ref('/logs/');
     this.configNode = firebase.database().ref('/config/');
+    this.usersNode = firebase.database().ref('/users/');
+    this.mapsNode = firebase.database().ref('/maps/');
   }
 
+  addUserIntoMap(user:UserModel) {
+    //actaulizamos el datos del usuario
+
+  }
+
+
+
+
+
+// {
+//     "_id": "kBhPZjXFVuTfsPk4sSZ6D1cjTtD79fR2",
+//     "lat": "38.9979067",
+//     "room": "daol",
+//     "color": "4b60cd",
+//     "nickname": "ona",
+//     "updatedAt": {
+//         "$date": "2016-10-30T08:40:48.290Z"
+//     },
+//     "__v": 0,
+//     "createdAt": {
+//         "$date": "2016-10-30T08:06:48.498Z"
+//     },
+//     "lng": "-1.8573967",
+//     "lastmessage": "A la cafeteria"
+// }
 
 
   // onAuthStateChanged(_function) {

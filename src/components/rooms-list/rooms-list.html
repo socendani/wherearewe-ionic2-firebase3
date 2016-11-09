@@ -1,0 +1,14 @@
+<ion-content style="min-height: 200px;  display: block;">
+
+    <h4 *ngIf="rooms.length<=0">No tienes histórico de mapas</h4>
+
+    <ion-card *ngIf="rooms.length>0">
+        <ion-list>
+            <button ion-item *ngFor="let item of rooms" (click)="setRoomName(item)">
+            <ion-icon name="cart" item-left></ion-icon>
+            {{item.id}} <b>{{item.name}}</b>
+          </button>
+        </ion-list>
+    </ion-card>
+
+</ion-content>

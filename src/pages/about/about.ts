@@ -3,22 +3,25 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FirebaseService } from '../../services/firebase.service';
 
+import { ChangeMapComponent } from '../../components/change-map/change-map';
+
 
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html',
-  providers: [FirebaseService]
+  providers: [FirebaseService,ChangeMapComponent]
 
 })
 export class AboutPage {
 
-  public config: Object;
-  public logs: Object;
+  public config: any;
+  public logs: any;
 
 
   constructor(
     public navCtrl: NavController,
-    private firebaseService: FirebaseService
+    private firebaseService: FirebaseService,
+    private changeMapComponent: ChangeMapComponent
   ) {
     this.config = {
       name:"loading..",

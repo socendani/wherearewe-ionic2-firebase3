@@ -4,6 +4,8 @@ import { ChatPage } from '../chat/chat';
 import { AboutPage } from '../about/about';
 import { MapPage } from '../map/map';
 
+
+
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -11,11 +13,15 @@ import { MapPage } from '../map/map';
 
 export class TabsPage {
 
+  public title: string="PPPPP";
+
   tab1Root: any = MapPage;
   tab2Root: any = ChatPage;
   tab3Root: any = AboutPage;
 
-  constructor() {
+  constructor(
+   
+  ) {
 
   }
 }

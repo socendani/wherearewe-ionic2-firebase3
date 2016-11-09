@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
+//Servicios
 import { AuthMiniService } from '../services/auth.mini.service';
 import { LoggerService } from '../services/logger.service';
 import { LoggerFirebaseService } from '../services/logger.firebase.service';
@@ -12,12 +13,15 @@ import { TabsPage } from '../pages/tabs/tabs';
 import * as Firebase from 'firebase';
 
 
+
+
 @Component({
   template: `<ion-nav [root]="rootPage"></ion-nav>`,
   providers: [LoggerService, LoggerFirebaseService, AuthMiniService]
 })
 export class MyApp {
   rootPage = TabsPage;
+
 
 
   constructor(
